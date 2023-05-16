@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "next": "^9.4.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "description": "Sample application to use Next.JS with Docker",
+  "license": "UNLICENSED",
+  "repository": {},
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
+  }
+}
