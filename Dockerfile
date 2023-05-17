@@ -2,7 +2,7 @@
 # Dockerfile
 
 # base image
-FROM node:16.19.1-alpine 
+FROM node:16-alpine AS builder
 
 # create & set working directory
 # RUN mkdir -p /app
@@ -15,6 +15,9 @@ COPY . /usr/src/
 RUN npm i
 
 # start app
+FROM node:16-alpine AS run
+WORKDIR /usr/src/
+COPY --from=builder /usr/src/ ./
 RUN npm run build
 EXPOSE 3000
 CMD ["npm", "start"]
